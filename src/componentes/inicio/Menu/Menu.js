@@ -16,15 +16,7 @@ export function Menu() {
             <Link className="nav-link" to="/catalogo">Pedidos</Link>
             <Link className="nav-link" to="/registro"></Link>
           </Nav>
-          <Form className="d-flex">
-            <FormControl
-              type="search"
-              placeholder="Buscar"
-              className="me-2"
-              aria-label="Buscar"
-            />
-            <Button variant="outline-success">Buscar</Button>
-          </Form>
+          
         </Container>
       </Navbar>
     </div>

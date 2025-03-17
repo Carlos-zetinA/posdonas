@@ -19,7 +19,7 @@ export function Icono() {
     <Card.Img variant="top" src="Cholocate.webp" />
     <ListGroup className="list-group-flush">
       <ListGroup.Item>Chocolate</ListGroup.Item>
-      <ListGroup.Item>Precio 25$</ListGroup.Item>
+      <ListGroup.Item>Precio 25$ </ListGroup.Item>
     </ListGroup>
     <Card.Body>
       <Card.Link href="#">Agregar</Card.Link>
