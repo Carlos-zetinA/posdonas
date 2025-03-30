@@ -30,26 +30,6 @@ export function Bebidas() {
     });
   };
 
-<<<<<<< HEAD
-  const bebidas = [
-    {
-      title: 'Frappe',
-      image: 'Frappe.webp',
-      sabores: ['Cokkies', 'Chocolate', 'Moka'],
-      price: 45,
-    },
-    {
-      title: 'Yogurt',
-      image: 'yo.png',
-      sabores: ['Natural', 'Griego', 'Fresa'],
-      price: 40,
-    },
-    {
-      title: 'Café',
-      image: 'cafe1.png',
-      sabores: ['Mocca', 'Latte', 'Americano'],
-      price: 35,
-=======
   // Función para abrir el modal con información de la bebida seleccionada
   const handleShowModal = (bebida) => {
     setSelectedBebida(bebida);
@@ -80,52 +60,10 @@ export function Bebidas() {
       precio: 35,
       descripcion: 'Café recién preparado con diferentes opciones de sabor.',
       tipo: 'cafe', // Tipo de bebida
->>>>>>> Carlos
     },
   ];
 
   return (
-<<<<<<< HEAD
-    <div
-      style={{
-        display: 'flex',
-        gap: '20px',
-        flexWrap: 'wrap',
-        padding: '20px',
-      }}
-    >
-      {bebidas.map((bebida, index) => (
-        <Card key={index} style={{ width: '18rem', textAlign: 'center' }}>
-          <Card.Body>
-            <Card.Title>{bebida.title}</Card.Title>
-            <Card.Img src={bebida.image} />
-          </Card.Body>
-          <ListGroup className="list-group-flush">
-            {bebida.sabores.map((sabor, idx) => (
-              <ListGroup.Item key={idx} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                {sabor}{' '}
-                <span>
-                  ${bebida.price}{' '}
-                  <Link onClick={() => toggleSelection(`${sabor}-${bebida.title}`)} style={{ cursor: 'pointer' }}>
-                    <i
-                      className={selectedItems[`${sabor}-${bebida.title}`] ? "bi bi-check-square-fill" : "bi bi-app"}
-                      style={{ color: selectedItems[`${sabor}-${bebida.title}`] ? 'blue' : 'black' }}
-                    ></i>
-                  </Link>
-                </span>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-          <Card.Body>
-            <Card.Link href="#">Agregar</Card.Link>
-            <Card.Link href="#">
-              <i className="bi bi-exclamation-circle-fill"></i>
-            </Card.Link>
-          </Card.Body>
-        </Card>
-      ))}
-    </div>
-=======
     <Container
       fluid
       className="vh-10 vw-10 text-center"
@@ -199,6 +137,5 @@ export function Bebidas() {
         </Modal.Footer>
       </Modal>
     </Container>
->>>>>>> Carlos
   );
 }
