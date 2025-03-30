@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Form, Button } from 'react-bootstrap';
+import { Container, Card, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export function Sesion() {
@@ -9,7 +9,13 @@ export function Sesion() {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <Container
+      fluid
+      className="d-flex justify-content-center align-items-center vh-100 vw-100 text-center"
+      style={{
+        background: 'linear-gradient(to right,rgba(59, 20, 20, 0.94), rgba(109, 29, 76, 0.8))',
+      }}
+    >
       <Card style={{ width: '22rem', padding: '20px' }}>
         <Card.Body>
           <Card.Title className="text-center">Inicio de Sesión</Card.Title>
@@ -23,13 +29,15 @@ export function Sesion() {
               <Form.Label>Contraseña</Form.Label>
               <Form.Control type="password" placeholder="Ingresa tu contraseña" required />
             </Form.Group>
-<Link to="/"><Button variant="primary" type="submit" className="w-100">
-              Agregar correo
-            </Button></Link>
-            
+
+            <Link to="/">
+              <Button variant="primary" type="submit" className="w-100">
+                Agregar correo
+              </Button>
+            </Link>
           </Form>
         </Card.Body>
       </Card>
-    </div>
+    </Container>
   );
 }
