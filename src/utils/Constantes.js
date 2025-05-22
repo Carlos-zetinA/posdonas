@@ -1,4 +1,4 @@
-const localH = "http://localhost:6000/api"
+const localH = "http://localhost:4000/api"
 
 export const ENV = {
     BASE_API: localH,
