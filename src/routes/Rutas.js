@@ -7,6 +7,8 @@ import { Bebidas } from "../componentes/Bebidas";
 import { Donas } from "../componentes/Donas";
 import { Icono } from "../componentes/icono";
 import { Carrito } from "../componentes/Carrito";
+import {ListaUsuarios} from "../componentes/Sesion/ListaUsuarios";
+import {} from "../componentes/Sesion/Sesion";
 
 export function Rutas() {
   const Layouts = (LayoutComponent, PageComponent) => (
@@ -22,7 +24,8 @@ export function Rutas() {
       <Route path="/bebidas" element={Layouts(Layout, Bebidas)} />
       <Route path="/donas" element={Layouts(Layout, Donas)} />
       <Route path="/carrito" element={Layouts(Layout, Carrito)} />
-      
+      <Route path="/" element={<Sesion />} />
+      <Route path="/lista-usuarios" element={<ListaUsuarios />} />
     </Routes>
   );
 }
