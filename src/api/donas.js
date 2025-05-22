@@ -1,5 +1,5 @@
-import { ENV } from "../utils/Constants";
-import Axios from "axios";
+import { ENV } from "../utils/Constantes"
+import Axios from "axios"
 
 export class Dona {
     baseApi = ENV.BASE_API;
@@ -25,7 +25,7 @@ export class Dona {
 
     async getDonas() {
         try {
-            const url = `${this.baseApi}/${ENV.API_ROUTES.GETDONAS}`;
+            const url = `${this.baseApi}/${ENV.API_ROUTES.GETDONA}`;
             const response = await Axios.get(url);
             return response.data;
         } catch (err) {

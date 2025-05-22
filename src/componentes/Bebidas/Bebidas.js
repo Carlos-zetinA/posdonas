@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
+import { Dona } from '../../api/donas';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 
 export function Bebidas() {
   const [selectedItems, setSelectedItems] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [selectedBebida, setSelectedBebida] = useState(null);
+  const bebidaController = new Dona();
 
   // Función para alternar la selección del sabor de bebida
   const toggleSelection = (item, bebida) => {
@@ -34,6 +36,30 @@ export function Bebidas() {
   const handleShowModal = (bebida) => {
     setSelectedBebida(bebida);
     setShowModal(true);
+  };
+
+  const handleAgregar = async (bebida) => {
+    const saborSeleccionado = selectedItems[bebida.tipo];
+    if (!saborSeleccionado) {
+      alert('Selecciona un sabor antes de agregar.');
+      return;
+    }
+
+    const data = {
+      titulo: bebida.titulo,
+      imagen: bebida.imagen,
+      sabor: saborSeleccionado,
+      precio: bebida.precio,
+    };
+
+    try {
+      await bebidaController.createDona(data);
+      alert("Bebida agregada correctamente");
+      setSelectedItems((prev) => ({ ...prev, [bebida.tipo]: null }));
+    } catch (error) {
+      console.log(error); // <-- Agrega esta línea para ver el error real
+      alert("Error al agregar bebida");
+    }
   };
 
   const bebidas = [
@@ -107,7 +133,7 @@ export function Bebidas() {
                 ))}
               </ListGroup>
               <Card.Body className="d-flex justify-content-between">
-                <Button variant="dark">Agregar</Button> 
+                <Button variant="dark" onClick={() => handleAgregar(bebida)}>Agregar</Button> 
                 <Link to="#" onClick={() => handleShowModal(bebida)}>
                   <i className="bi bi-exclamation-circle-fill text-danger" style={{ fontSize: '1.3rem' }}></i>
                 </Link>

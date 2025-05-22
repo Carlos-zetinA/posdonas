@@ -17,7 +17,7 @@ export function Menu() {
         <Tab eventKey="Sesion" title="Iniciar Sesión"></Tab>
         <Tab eventKey="bebidas" title="Bebidas"></Tab>
         <Tab eventKey="donas" title="Donas"></Tab>
-        <Tab eventKey="pedidos" title="Pedidos"></Tab>
+        <Tab eventKey="carrito" title="🛒"></Tab>
       </Tabs>
     </Container>
   );
